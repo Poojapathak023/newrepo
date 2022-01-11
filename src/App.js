@@ -4,11 +4,11 @@ import Form from './Components/Form';
 import About from './Components/About';
 import React, { useState } from 'react'
 import Alert from './Components/Alert';
-import {
+ import {
   BrowserRouter as Router,
   Routes,
   Route
-} from "react-router-dom";
+} from "react-router-dom"; 
 
 
 function App() {
@@ -41,24 +41,23 @@ function App() {
   }
 
    return (
-    <Router>
-    <>
-    
-  <Navbar title="MyApp" menu1="Home" menu2="About"  mode={mode} toggleMode={ toggleMode }/>
-  <Alert alert={alert} />
-  
-  <Routes>
-          <Route extact path="/about" element={<About />}>
+   <Router>
+     <>  
+    <Navbar title="MyApp" menu1="Home" menu2="About"  mode={mode} toggleMode={ toggleMode }/>
+    <Alert alert={alert} />
+   <Routes>
+            <Route extact path="/about" element={<About />}>
+              
+            </Route>
+            <Route extact path="/" element={<Form showalert={showalert} heading="Enter Your text to Analyze"  heading2="Enter Your Number" mode={mode} />
+           }>
+            </Route>
             
-          </Route>
-          <Route extact path="/" element={<Form showalert={showalert} heading="Enter Your text to Analyze"  heading2="Enter Your Number" mode={mode} />
-         }>
-          </Route>
+           </Routes>  
           
-         </Routes>
-        
-    </>
-    </Router>
+           </>    
+     </Router> 
+  
   );
 }
 
